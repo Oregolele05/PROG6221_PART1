@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Media;
 
+
 class CyberGuard
 {
     public static void Main(string[] args)
@@ -17,7 +18,7 @@ class CyberGuard
     {
         try
         {
-            SoundPlayer player = new SoundPlayer("greet.wav");
+            SoundPlayer player = new SoundPlayer(@"C:\\Users\\gmkin\\Documents\\second year\\PROG6221\\CyberGuard\\greet.wav");
             player.PlaySync();
         }
         catch(Exception ex)
