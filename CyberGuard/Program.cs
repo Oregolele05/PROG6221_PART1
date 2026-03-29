@@ -15,7 +15,15 @@ class CyberGuard
     }
     public static void VoiceGreeting()
     {
-       
+        try
+        {
+            SoundPlayer player = new SoundPlayer("greet.wav");
+            player.PlaySync();
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine("Error playing sound: " + ex.Message);
+        }
     }
     //this will display the bot logo when application runs
     public static void LogoDisplay()
