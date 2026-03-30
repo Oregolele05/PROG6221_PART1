@@ -3,23 +3,20 @@ using System.Media;
 
 public class CyberDesign
 {
-    public CyberInterface()
+    public static void VoiceGreeting()
     {
-        public static void VoiceGreeting()
+        try
         {
-            try
-            {
-                SoundPlayer player = new SoundPlayer(@"C:\\Users\\gmkin\\Documents\\second year\\PROG6221\\CyberGuard\\greet.wav");
-                player.PlaySync();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error playing sound: " + ex.Message);
-            }
+            SoundPlayer player = new SoundPlayer(@"C:\\Users\\gmkin\\Documents\\second year\\PROG6221\\CyberGuard\\greet.wav");
+            player.PlaySync();
         }
-        public static void LogoDisplay()
+        catch (Exception ex)
         {
-            Console.WriteLine("  ██████╗██╗   ██╗██████╗ ███████╗██████╗  ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗ \r\n ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔════╝ ██║   ██║██╔══██╗██╔══██╗██╔══██╗\r\n ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██║  ███╗██║   ██║███████║██████╔╝██║  ██║\r\n ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██║   ██║██║   ██║██╔══██║██╔══██╗██║  ██║\r\n ╚██████╗   ██║   ██████╔╝███████╗██║  ██║╚██████╔╝╚██████╔╝██║  ██║██║  ██║██████╔╝\r\n  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ");
+            Console.WriteLine("Error playing sound: " + ex.Message);
         }
+    }
+    public static void LogoDisplay()
+    {
+        Console.WriteLine("  ██████╗██╗   ██╗██████╗ ███████╗██████╗  ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗ \r\n ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔════╝ ██║   ██║██╔══██╗██╔══██╗██╔══██╗\r\n ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██║  ███╗██║   ██║███████║██████╔╝██║  ██║\r\n ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██║   ██║██║   ██║██╔══██║██╔══██╗██║  ██║\r\n ╚██████╗   ██║   ██████╔╝███████╗██║  ██║╚██████╔╝╚██████╔╝██║  ██║██║  ██║██████╔╝\r\n  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ");
     }
 }

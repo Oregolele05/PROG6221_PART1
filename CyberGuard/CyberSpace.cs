@@ -2,8 +2,6 @@
 
 public class CyberSpace
 {
-    public CyberSystem()
-    {
         public static void UserInteraction()
         {
             while (true)
@@ -104,4 +102,4 @@ public class CyberSpace
             }
         }
     }
-}
+
