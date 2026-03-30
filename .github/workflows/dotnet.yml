@@ -1,35 +1,46 @@
-name: .NET CI
+name: CyberGuard CI
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main", "master", "dev" ]
   pull_request:
     branches: [ "main", "master" ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-test:
+    name: Build & Test
+    runs-on: windows-latest   # Required for System.Media.SoundPlayer (Windows-only API)
 
     steps:
-    # Checkout repo
-    - name: Checkout code
-      uses: actions/checkout@v4
+      # 1. Check out source code
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    # Install .NET SDK
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
+      # 2. Set up .NET SDK
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'   # Change to 6.0.x or 7.0.x if your project targets an older version
 
-    # Restore dependencies (specify project/solution if needed)
-    - name: Restore dependencies
-      run: dotnet restore
+      # 3. Restore NuGet dependencies
+      - name: Restore dependencies
+        run: dotnet restore CyberGuard/CyberGuard.csproj
 
-    # Build project (Release mode for CI)
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
+      # 4. Build the solution in Release mode
+      - name: Build
+        run: dotnet build CyberGuard/CyberGuard.csproj --no-restore --configuration Release
 
-    # Run tests (only if test project exists)
-    - name: Test
-      run: dotnet test --configuration Release --no-build --verbosity normal
-      continue-on-error: true
+      # 5. Run tests (if a test project is added later)
+      - name: Test
+        run: dotnet test CyberGuard/CyberGuard.csproj --no-build --configuration Release --verbosity normal
+
+      # 6. Publish the application artifact
+      - name: Publish
+        run: dotnet publish CyberGuard/CyberGuard.csproj --no-build --configuration Release --output ./publish
+
+      # 7. Upload the published output so it can be downloaded from GitHub Actions
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cyberguard-release
+          path: ./publish
