@@ -25,9 +25,17 @@ public class CyberDesign
             Thread.Sleep(delay);
         }
     }
-    //this is for the animated logo design
+    //this is for the logo design
     public static void LogoDisplay()
     {
         Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════╗\r\n║  ██████╗██╗   ██╗██████╗ ███████╗██████╗  ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗ ║\r\n║ ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔════╝ ██║   ██║██╔══██╗██╔══██╗██╔══██╗║\r\n║ ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██║  ███╗██║   ██║███████║██████╔╝██║  ██║║\r\n║ ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██║   ██║██║   ██║██╔══██║██╔══██╗██║  ██║║\r\n║ ╚██████╗   ██║   ██████╔╝███████╗██║  ██║╚██████╔╝╚██████╔╝██║  ██║██║  ██║██████╔╝║\r\n║  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ║\r\n╚════════════════════════════════════════════════════════════════════════════════════╝");
+    }
+    public static void Box(string text)
+    {
+        int width = text.Length + 2;
+        //this will wrap the users welcome message in a box
+        Console.WriteLine("╔" + new string('═', width) + "╗");
+        Console.WriteLine("║ " + text + " ║");
+        Console.WriteLine("╚" + new string('═', width) + "╝");
     }
 }
