@@ -4,7 +4,7 @@ using System.Media;
 public class CyberDesign
 {
     //this is for the voice greeting
-    public static void VoiceGreeting()
+    public void VoiceGreeting()
     {
         try
         {
@@ -17,7 +17,7 @@ public class CyberDesign
         }
     }
     //this is for the text animation effect
-    public static void Animation(string text, int delay = 50)
+    public void Animation(string text, int delay = 50)
     {
         foreach(char c in text)
         {
@@ -26,11 +26,11 @@ public class CyberDesign
         }
     }
     //this is for the logo design
-    public static void LogoDisplay()
+    public void LogoDisplay()
     {
         Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════╗\r\n║  ██████╗██╗   ██╗██████╗ ███████╗██████╗  ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗ ║\r\n║ ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔════╝ ██║   ██║██╔══██╗██╔══██╗██╔══██╗║\r\n║ ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██║  ███╗██║   ██║███████║██████╔╝██║  ██║║\r\n║ ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██║   ██║██║   ██║██╔══██║██╔══██╗██║  ██║║\r\n║ ╚██████╗   ██║   ██████╔╝███████╗██║  ██║╚██████╔╝╚██████╔╝██║  ██║██║  ██║██████╔╝║\r\n║  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ║\r\n╚════════════════════════════════════════════════════════════════════════════════════╝");
     }
-    public static void Box(string text)
+    public void Box(string text)
     {
         int width = text.Length + 2;
         //this will wrap the users welcome message in a box

@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 public class CyberSpace : CyberDesign
 {
     
-    public static void UserInteraction()
+    public void UserInteraction()
     {
         while (true)
         {
@@ -31,7 +31,7 @@ public class CyberSpace : CyberDesign
             break;
         }
     }
-    public static void ResponseSystem()
+    public void ResponseSystem()
     {
         while (true)
         {
