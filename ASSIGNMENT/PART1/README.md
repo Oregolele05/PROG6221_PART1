@@ -18,5 +18,6 @@ CyberSpace.cs implements the cyberDesign, and it consists of these methods:UserI
 2.1 Phishing will give the user information abouth its definition, the common types of phishing attacks,the risks of it, and how to recognize and avoid them.
 2.2 Password Safety will provide its definition, tips on creating strong passwords common risks and dangers, best practices and how hackers crack passwords.
 2.3 Safe Browsing will return its definition,the common risks, educate the user on how to navigate the internet safely, tools that help, and good habits for safe browsing.
-<img width="1919" height="1199" alt="Screenshot 2026-04-09 102024" src="https://github.com/user-attachments/assets/cf9c1f28-a9e4-46d5-8106-a2fc4de8bd59" />
+<img width="1909" height="1032" alt="image" src="https://github.com/user-attachments/assets/d98f4042-ef4e-4ecf-b6c0-f699d01cd6d6" />
+
 
