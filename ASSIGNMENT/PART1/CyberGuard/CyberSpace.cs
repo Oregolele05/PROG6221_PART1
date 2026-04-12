@@ -49,6 +49,7 @@ public class CyberSpace : CyberDesign
                     return;
 
                 default:
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Animation("\nI couldn't quite catch that. Please try again.");
                     continue;
             }
@@ -269,6 +270,7 @@ public class CyberSpace : CyberDesign
                             Console.WriteLine("3.Never save passwords in your browser on a shared computer");
                             continue;
                         }
+                        //this will go back to the main menu   
                         else if (option.Contains("go back") || option == "6")
                         {
                             Animation("\nReturning to the topic menu...");

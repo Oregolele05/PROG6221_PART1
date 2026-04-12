@@ -8,7 +8,7 @@ public class CyberDesign
     {
         try
         {
-            SoundPlayer player = new SoundPlayer(@"C:\\Users\\gmkin\\Documents\\second year\\PROG6221\\CyberGuard\\greet.wav");
+            SoundPlayer player = new SoundPlayer(@"C:\\Users\\gmkin\\Documents\\second year\\PROG6221\\ASSIGNMENT\\PART1\\CyberGuard\\greet.wav");
             player.PlaySync();
         }
         catch (Exception ex)
