@@ -1,8 +1,11 @@
-﻿using System;
+using System;
 using System.Media;
+using System.Windows.Forms;
+using System.Drawing;
 
 public class CyberDesign
 {
+    protected RichTextBox ChatDisplay {  get; set; }
     //this is for the voice greeting
     public void VoiceGreeting()
     {
@@ -16,15 +19,31 @@ public class CyberDesign
             Console.WriteLine("Error playing sound: " + ex.Message);
         }
     }
-    //this is for the text animation effect
-    public void Animation(string text, int delay = 50)
-    {
-        foreach(char c in text)
-        {
-            Console.Write(c);
-            Thread.Sleep(delay);
-        }
-    }
+    // Bot response — cyan
+    public void BotSay(string message)
+        => DisplayMessage("🤖  " + message, Color.Cyan);
+
+    // Warning or error — red
+    public void BotWarn(string message)
+        => DisplayMessage("⚠   " + message, Color.Tomato);
+
+    // Section header — gold
+    public void BotHeader(string message)
+        => DisplayMessage("\n══════ " + message + " ══════", Color.Gold);
+
+    // Info bullet point — light cyan
+    public void BotInfo(string message)
+        => DisplayMessage("     " + message, Color.LightCyan);
+
+    // User's own message — green
+    public void UserSay(string message)
+        => DisplayMessage("👤  " + message, Color.LightGreen);
+
+    // Separator line — dim gray
+    public void BotLine()
+        => DisplayMessage("─────────────────────────────────────────", Color.DimGray);
+
+
     //this is for the logo design
     public void LogoDisplay()
     {
@@ -37,5 +56,15 @@ public class CyberDesign
         Console.WriteLine("╔" + new string('═', width) + "╗");
         Console.WriteLine("║ " + text + " ║");
         Console.WriteLine("╚" + new string('═', width) + "╝");
+    }
+    public void DisplayMessage(string message, Color colour)
+    {
+        if(ChatDisplay == null)
+        {
+            return;
+        }
+        ChatDisplay.SelectionColor = colour;
+        ChatDisplay.AppendText(message + "\n");
+        ChatDisplay.ScrollToCaret();
     }
 }
