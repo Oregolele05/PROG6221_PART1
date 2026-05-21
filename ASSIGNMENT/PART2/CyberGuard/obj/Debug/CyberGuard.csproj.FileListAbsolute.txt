@@ -1,0 +1,5 @@
+C:\Users\gmkin\Documents\second year\PROG6221\ASSIGNMENT\PART2\CyberGuard\obj\Debug\CyberGuard.csproj.AssemblyReference.cache
+C:\Users\gmkin\Documents\second year\PROG6221\ASSIGNMENT\PART2\CyberGuard\obj\Debug\CyberGuard.Form1.resources
+C:\Users\gmkin\Documents\second year\PROG6221\ASSIGNMENT\PART2\CyberGuard\obj\Debug\CyberGuard.Properties.Resources.resources
+C:\Users\gmkin\Documents\second year\PROG6221\ASSIGNMENT\PART2\CyberGuard\obj\Debug\CyberGuard.csproj.GenerateResource.cache
+C:\Users\gmkin\Documents\second year\PROG6221\ASSIGNMENT\PART2\CyberGuard\obj\Debug\CyberGuard.csproj.CoreCompileInputs.cache
