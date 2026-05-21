@@ -1,35 +1,41 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
+
+
+
+//used for random tip selection throughtout CyberSpace
+public delegate string TipProvider();
 
 public class CyberSpace : CyberDesign
 {
-    
-    public void UserInteraction()
+    CyberUser user = new CyberUser();
+    public void ShowWelcomeScreen()
     {
-        while (true)
+        LogoDisplay();
+        BotLine();
+        BotSay("Welcome to CyberGuard - your Cyber Awareness Chatbot!");
+        BotSay("Before we begin, what is your name?");
+        user.Section = "getname";
+    }
+    public void UserInteraction(string input)
+    {
+        //this code will validate the user input for name
+        if (string.IsNullOrWhiteSpace(input))
         {
-            //this is for the text colour
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            //ask user for their name
-            Animation("\nWhat is your name: ");
-            string name = Console.ReadLine().Trim();
 
-            //this code will validate the user input for name
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Animation("\nPlease enter a valid name.");
-                continue;
-            }
-            else if (name.Any(char.IsDigit))
-            {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Animation("\nA name cannot contain numeric values.");
-                continue;
-            }
-            Box("Welcome " + name + " nice to meet you!!");
-            break;
+            BotWarn("\nPlease enter a valid name.");
+            return;
         }
+        if (input.Any(char.IsDigit))
+        {
+            BotWarn("\nA name cannot contain numeric values.");
+            return;
+        }
+        user.username = input.Trim();
+        BotLine();
+        Box("Welcome " + user.username + " nice to meet you!!");
+        BotLine();
+
     }
     public void ResponseSystem()
     {
@@ -203,7 +209,7 @@ public class CyberSpace : CyberDesign
                             continue;
                         }
                         //this will go back to main menu
-                        else if (option.Contains("go back") || option.Contains("back")|| option == "6")
+                        else if (option.Contains("go back") || option.Contains("back") || option == "6")
                         {
                             Animation("\nReturning to the topic menu...");
                             break;
