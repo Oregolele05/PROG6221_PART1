@@ -1,6 +1,6 @@
 ﻿namespace CyberGuard
 {
-    partial class Form1
+    partial class CyberForm
     {
         /// <summary>
         /// Required designer variable.
